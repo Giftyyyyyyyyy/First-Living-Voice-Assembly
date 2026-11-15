@@ -1,0 +1,843 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="First Living Voice Assembly - Speaking Into Your Life. Join us for worship, fellowship and the Word of God.">
+<title>First Living Voice Assembly | Speaking Into Your Life</title>
+
+<style>
+:root {
+  --blue: #102d69;
+  --deep: #091b40;
+  --gold: #c9a45c;
+  --white: #ffffff;
+  --light: #f4f7fc;
+  --text: #26334b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+header {
+  background: var(--white);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 15px rgba(0,0,0,.07);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  color: var(--blue);
+  font-weight: 800;
+  font-size: 19px;
+  line-height: 1.3;
+}
+
+.logo span {
+  display: block;
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+.nav-links .nav-button {
+  background: var(--blue);
+  color: white;
+  padding: 11px 20px;
+  border-radius: 4px;
+}
+
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: none;
+  font-size: 28px;
+  color: var(--blue);
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 620px;
+  background:
+    linear-gradient(90deg, rgba(5,18,49,.94), rgba(9,27,64,.65)),
+    url('https://images.unsplash.com/photo-1438032005730-c779502df39b?auto=format&fit=crop&w=1800&q=85');
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.hero-content {
+  max-width: 750px;
+  padding: 100px 0;
+}
+
+.eyebrow {
+  color: var(--gold);
+  letter-spacing: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 6vw, 70px);
+  line-height: 1.12;
+  margin: 20px 0;
+  font-weight: 800;
+}
+
+.hero h1 span {
+  color: var(--gold);
+}
+
+.hero p {
+  max-width: 570px;
+  color: #e2e7f1;
+  margin-bottom: 30px;
+  font-size: 17px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 25px;
+  border-radius: 4px;
+  font-weight: 700;
+  margin: 5px 8px 5px 0;
+  transition: .3s;
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--deep);
+}
+
+.btn-outline {
+  border: 1px solid white;
+  color: white;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  opacity: .9;
+}
+
+/* GENERAL SECTIONS */
+
+section {
+  padding: 85px 0;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-heading span {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.section-heading h2 {
+  color: var(--blue);
+  font-size: 34px;
+  margin-top: 8px;
+}
+
+.section-heading p {
+  color: #748096;
+  margin-top: 10px;
+}
+
+/* ABOUT */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.about-image {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.about-text h2 {
+  color: var(--blue);
+  font-size: 34px;
+  margin: 10px 0 20px;
+}
+
+.about-text p {
+  margin-bottom: 18px;
+  color: #657086;
+}
+
+/* SERVICES */
+
+.services {
+  background: var(--light);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.service-card {
+  background: white;
+  padding: 30px 24px;
+  border-bottom: 3px solid var(--gold);
+  border-radius: 5px;
+  box-shadow: 0 5px 25px rgba(0,0,0,.04);
+}
+
+.service-card h3 {
+  color: var(--blue);
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  color: #738096;
+  font-size: 14px;
+}
+
+.service-time {
+  color: var(--gold);
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+/* PASTOR */
+
+.pastor-grid {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.pastor-grid img {
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.pastor-grid h2 {
+  color: var(--blue);
+  font-size: 32px;
+  margin: 10px 0;
+}
+
+/* LIVE */
+
+.live-section {
+  background: var(--deep);
+  color: white;
+  text-align: center;
+}
+
+.live-section h2 {
+  font-size: 36px;
+  margin: 10px 0;
+}
+
+.live-section p {
+  color: #d4dceb;
+}
+
+.video-frame {
+  margin-top: 35px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.video-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* SERMONS */
+
+.sermon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.sermon-card {
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 5px 25px rgba(0,0,0,.07);
+}
+
+.sermon-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.sermon-info {
+  padding: 20px;
+}
+
+.sermon-info h3 {
+  color: var(--blue);
+}
+
+.sermon-info p {
+  color: #8490a1;
+  font-size: 13px;
+}
+
+/* EVENTS */
+
+.events {
+  background: var(--light);
+}
+
+.event-card {
+  background: white;
+  padding: 25px;
+  border-left: 4px solid var(--gold);
+  margin-bottom: 18px;
+  border-radius: 4px;
+}
+
+.event-card h3 {
+  color: var(--blue);
+}
+
+/* GIVING */
+
+.giving {
+  text-align: center;
+  background: var(--blue);
+  color: white;
+}
+
+.giving h2 {
+  font-size: 35px;
+  margin-bottom: 15px;
+}
+
+.giving p {
+  max-width: 650px;
+  margin: 0 auto 25px;
+  color: #e0e7f3;
+}
+
+/* CONTACT */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.contact-grid h3 {
+  color: var(--blue);
+  margin-bottom: 15px;
+}
+
+.contact-grid p {
+  margin-bottom: 12px;
+  color: #657086;
+}
+
+/* FOOTER */
+
+footer {
+  background: #07152f;
+  color: white;
+  padding: 45px 0 20px;
+  text-align: center;
+}
+
+footer .footer-logo {
+  font-size: 23px;
+  font-weight: bold;
+}
+
+footer .motto {
+  color: var(--gold);
+  letter-spacing: 2px;
+  margin: 8px 0 20px;
+  font-size: 12px;
+}
+
+footer p {
+  color: #b9c4d8;
+  font-size: 13px;
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #25d366;
+  color: white;
+  padding: 13px 19px;
+  border-radius: 40px;
+  font-weight: bold;
+  z-index: 999;
+  box-shadow: 0 4px 15px rgba(0,0,0,.2);
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media(max-width: 850px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    padding: 25px;
+    gap: 20px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .about-grid,
+  .pastor-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-grid,
+  .sermon-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pastor-grid img {
+    max-width: 400px;
+  }
+}
+
+@media(max-width: 550px) {
+  .service-grid,
+  .sermon-grid {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 65px 0;
+  }
+
+  .hero {
+    min-height: 550px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .section-heading h2 {
+    font-size: 28px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#" class="logo">
+      FIRST LIVING VOICE ASSEMBLY
+      <span>SPEAKING INTO YOUR LIFE</span>
+    </a>
+
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation">☰</button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" onclick="closeMenu()">Home</a>
+      <a href="#about" onclick="closeMenu()">About Us</a>
+      <a href="#services" onclick="closeMenu()">Services</a>
+      <a href="#sermons" onclick="closeMenu()">Sermons</a>
+      <a href="#events" onclick="closeMenu()">Events</a>
+      <a href="#contact" onclick="closeMenu()">Contact</a>
+      <a href="#giving" class="nav-button" onclick="closeMenu()">Give Online</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO SECTION -->
+
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content">
+      <div class="eyebrow">Welcome to our church</div>
+
+      <h1>A Place of Faith,<br>Hope & <span>Transformation.</span></h1>
+
+      <p>
+        Welcome to First Living Voice Assembly, where lives are
+        transformed through the Word of God, genuine worship
+        and the power of His presence.
+      </p>
+
+      <a href="#about" class="btn btn-gold">Discover Our Church</a>
+      <a href="#live" class="btn btn-outline">Watch Online</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+  <div class="container about-grid">
+    <img class="about-image"
+      src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1000&q=85"
+      alt="Church congregation">
+
+    <div class="about-text">
+      <div class="eyebrow">Who We Are</div>
+      <h2>Speaking Life. Building Faith. Transforming Destinies.</h2>
+
+      <p>
+        First Living Voice Assembly is a place where the Word of
+        God comes alive, faith is strengthened and people discover
+        their purpose in Christ.
+      </p>
+
+      <p>
+        We believe in the transforming power of God's Word,
+        the importance of fellowship and the call to live a life
+        that reflects His glory.
+      </p>
+
+      <a href="#services" class="btn btn-gold">Join Our Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE TIMETABLE -->
+
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-heading">
+      <span>Worship With Us</span>
+      <h2>Our Weekly Services</h2>
+      <p>There is a place for you in our church family.</p>
+    </div>
+
+    <div class="service-grid">
+
+      <div class="service-card">
+        <h3>Sunday Worship Service</h3>
+        <p>A time of worship, praise, prayer and the teaching of God's Word.</p>
+        <div class="service-time">Sunday | Add service time</div>
+      </div>
+
+      <div class="service-card">
+        <h3>Bible Study</h3>
+        <p>Growing deeper in the knowledge and understanding of Scripture.</p>
+        <div class="service-time">Add day and time</div>
+      </div>
+
+      <div class="service-card">
+        <h3>Prayer Meeting</h3>
+        <p>Coming together in faith, intercession and fellowship.</p>
+        <div class="service-time">Add day and time</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PASTOR -->
+
+<section id="pastor">
+  <div class="container pastor-grid">
+
+    <img
+      src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=85"
+      alt="Pastor profile placeholder">
+
+    <div>
+      <div class="eyebrow">Our Spiritual Leadership</div>
+      <h2>Meet Our Pastor</h2>
+
+      <h3>Rev. Dr. Charles Idu</h3>
+
+      <p>
+        A devoted servant of God, committed to teaching the
+        undiluted Word of God, inspiring faith and helping
+        people discover and fulfil their divine purpose.
+      </p>
+
+      <p>
+        Through the ministry of First Living Voice Assembly,
+        lives are being encouraged, equipped and transformed
+        by the power of God's Word.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- LIVE STREAM -->
+
+<section class="live-section" id="live">
+  <div class="container">
+    <div class="eyebrow">Worship From Anywhere</div>
+    <h2>Join Us Live</h2>
+
+    <p>
+      Can't make it to church? You can still worship with us
+      wherever you are.
+    </p>
+
+    <div class="video-frame">
+      <iframe
+        src="https://www.youtube.com/embed/live_stream?channel=YOUR_CHANNEL_ID"
+        title="First Living Voice Assembly Live Stream"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <br>
+    <a href="https://www.youtube.com/" target="_blank"
+       class="btn btn-gold">Visit Our YouTube Channel</a>
+  </div>
+</section>
+
+<!-- SERMONS -->
+
+<section id="sermons">
+  <div class="container">
+
+    <div class="section-heading">
+      <span>Grow In The Word</span>
+      <h2>Recent Sermons</h2>
+      <p>Watch, listen and be inspired by God's Word.</p>
+    </div>
+
+    <div class="sermon-grid">
+
+      <div class="sermon-card">
+        <img src="https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=800&q=85" alt="Worship">
+        <div class="sermon-info">
+          <h3>Understanding Biblical Friendship</h3>
+          <p>Watch our latest messages on YouTube.</p>
+          <a href="https://www.youtube.com/" target="_blank" class="btn btn-gold">Watch Sermon</a>
+        </div>
+      </div>
+
+      <div class="sermon-card">
+        <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=85" alt="Church service">
+        <div class="sermon-info">
+          <h3>The Seasons of Life</h3>
+          <p>Discover God's purpose in every season.</p>
+          <a href="https://www.youtube.com/" target="_blank" class="btn btn-gold">Watch Sermon</a>
+        </div>
+      </div>
+
+      <div class="sermon-card">
+        <img src="https://images.unsplash.com/photo-1438032005730-c779502df39b?auto=format&fit=crop&w=800&q=85" alt="Church worship">
+        <div class="sermon-info">
+          <h3>Growing In Faith</h3>
+          <p>Strengthen your walk with God.</p>
+          <a href="https://www.youtube.com/" target="_blank" class="btn btn-gold">Watch Sermon</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+
+<section class="events" id="events">
+  <div class="container">
+
+    <div class="section-heading">
+      <span>What's Happening</span>
+      <h2>Church Events & Announcements</h2>
+      <p>Stay connected with our upcoming programmes.</p>
+    </div>
+
+    <div class="event-card">
+      <h3>Upcoming Church Programme</h3>
+      <p>Programme details, date and venue will be announced here.</p>
+    </div>
+
+    <div class="event-card">
+      <h3>Special Worship Service</h3>
+      <p>Stay connected for updates about our special services.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- GIVING -->
+
+<section class="giving" id="giving">
+  <div class="container">
+    <div class="eyebrow">Kingdom Giving</div>
+    <h2>Give & Support The Work</h2>
+
+    <p>
+      Your generosity helps us spread the Gospel, support
+      ministry activities and impact lives in our community.
+    </p>
+
+    <a href="https://example.com" class="btn btn-gold">
+      Give Online
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+  <div class="container">
+
+    <div class="section-heading">
+      <span>We Would Love To Hear From You</span>
+      <h2>Get In Touch</h2>
+      <p>Come worship with us. You are always welcome.</p>
+    </div>
+
+    <div class="contact-grid">
+
+      <div>
+        <h3>Church Information</h3>
+        <p><strong>Church:</strong> First Living Voice Assembly</p>
+        <p><strong>Motto:</strong> Speaking Into Your Life</p>
+        <p><strong>Pastor:</strong> Rev. Dr. Charles Idu</p>
+        <p><strong>Address:</strong> Add church address here</p>
+        <p><strong>Email:</strong> Add church email here</p>
+      </div>
+
+      <div>
+        <h3>Connect With Us</h3>
+        <p>Have a prayer request, testimony or enquiry?</p>
+
+        <a href="https://wa.me/2340000000000"
+           class="btn btn-gold" target="_blank">
+          Chat With Us On WhatsApp
+        </a>
+
+        <p>Follow our church activities and stay connected.</p>
+        <a href="https://www.youtube.com/" target="_blank">
+          Visit Our YouTube Channel
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="container">
+    <div class="footer-logo">FIRST LIVING VOICE ASSEMBLY</div>
+
+    <div class="motto">SPEAKING INTO YOUR LIFE</div>
+
+    <p>Living by the Word. Walking in Faith. Impacting Lives.</p>
+
+    <br>
+
+    <p>© <span id="year"></span> First Living Voice Assembly.
+    All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOATING BUTTON -->
+
+<a href="https://wa.me/2340000000000"
+   class="whatsapp" target="_blank">
+  WhatsApp Us
+</a>
+
+<script>
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("active");
+}
+
+function closeMenu() {
+  document.getElementById("navLinks").classList.remove("active");
+}
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
